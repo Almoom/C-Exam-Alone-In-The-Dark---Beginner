@@ -30,55 +30,42 @@
 
 #include <stdio.h>
 
-// void	sort_int_tab(int *tab, unsigned int size)
-// {
-// 	unsigned int i;
-// 	int j;
-// 	int t;
-// 	int n;
-//
-// 	i = 1;
-// 	n = 0;
-// 	while (i < size)
-// 	{
-// 		t = tab[i];
-// 		n++;
-// 		j = i - 1;
-// 		while (j >= 0 && tab[j] > t)
-// 		{
-// 			tab[j + 1] = tab[j];
-// 			n++;
-// 			j--;
-// 		}
-// 		tab[j + 1] = t;
-// 		n++;
-// 		i++;
-// 	}
-// 	n++;
-// 	printf("--%d\n", n);
-// }
+void	sort_int_tab(int *tab, unsigned int size)
+{
+	unsigned int i;
+	int j;
+	int t;
+
+	i = 1;
+	while (i < size)
+	{
+		t = tab[i];
+		j = i - 1;
+		while (j >= 0 && tab[j] > t)
+		{
+			tab[j + 1] = tab[j];
+			j--;
+		}
+		tab[j + 1] = t;
+		i++;
+	}
+}
 
 void	sort_int_tab(int *tab, unsigned int size)
 {
 	unsigned int i;
 	int t;
-	int n;
 
 	i = 0;
-	n = 0;
 	while (i + 1 < size)
 	{
 		if (tab[i] > tab[i + 1])
 		{
 			t = tab[i];
-			n++;
 			tab[i] = tab[i + 1];
-			n++;
 			tab[i + 1] = t;
 			i = -1;
-			n++;
 		}
 		i++;
 	}
-	printf("--%d\n", n);
 }

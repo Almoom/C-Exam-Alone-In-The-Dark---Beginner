@@ -76,7 +76,7 @@ void print(void *s)
 	printf("%s\n", s);
 }
 
-int		main(int ac, char **av)
+int		main()
 {
 	t_list *l1;
 	t_list *l2;
